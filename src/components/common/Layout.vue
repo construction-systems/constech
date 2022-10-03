@@ -20,7 +20,11 @@
     Content
   </Sidebar>
   <nav>
-    <Button icon="pi pi-arrow-right" @click="visibleLeft = true"/>
+    <div class="flex items-center">
+      <Button icon="pi pi-fw pi-bars" class="p-button-rounded p-button-text p-button-text" @click="visibleLeft = true"/>
+      <h1>Constech</h1>
+    </div>
+
   </nav>
   <main id="content">
     <slot></slot>
