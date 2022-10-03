@@ -4,6 +4,6 @@
 
 <template>
   <Layout>
-    <div>dsadas</div>
+    <router-view/>
   </Layout>
 </template>

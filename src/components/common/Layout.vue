@@ -16,19 +16,18 @@
 </script>
 
 <template>
+  <nav class="flex items-center bg-[#1B4A47] h-[64px]">
+      <Button class="p-button-rounded p-button-secondary p-button-text" @click="visibleLeft = true">
+        <i class="pi pi-fw pi-bars text-white text-[25px]"></i>
+      </Button>
+      <img src="./../../assets/img/logo.png" width="40" class="mr-2"/>
+    </nav>
+  <main id="content">
+    <slot/>
+  </main>
   <Sidebar v-model:visible="visibleLeft">
     Content
   </Sidebar>
-  <nav>
-    <div class="flex items-center">
-      <Button icon="pi pi-fw pi-bars" class="p-button-rounded p-button-text p-button-text" @click="visibleLeft = true"/>
-      <h1>Constech</h1>
-    </div>
-
-  </nav>
-  <main id="content">
-    <slot></slot>
-  </main>
 </template>
 
 <style>
