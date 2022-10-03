@@ -1,5 +1,12 @@
 import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import 'primeicons/primeicons.css';
+import 'primevue/resources/primevue.min.css';
+import 'primevue/resources/themes/md-light-indigo/theme.css';
 
-createApp(App).mount('#app')
+import App from './App.vue'
+import PrimeVue from 'primevue/config'
+
+const app = createApp(App)
+app.use(PrimeVue)
+
+app.mount('#app')
