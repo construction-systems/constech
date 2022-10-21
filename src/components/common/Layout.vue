@@ -26,7 +26,7 @@
     </div>
 
   </nav>
-  <main id="content">
+  <main id="content" class="mx-[6%]">
     <slot></slot>
   </main>
 </template>

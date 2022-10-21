@@ -3,7 +3,5 @@
 </script>
 
 <template>
-  <Layout>
-    <div>dsadas</div>
-  </Layout>
+  <router-view/>
 </template>
