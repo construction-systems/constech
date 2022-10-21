@@ -28,6 +28,16 @@
   <Sidebar v-model:visible="visibleLeft">
     Content
   </Sidebar>
+  <nav>
+    <div class="flex items-center">
+      <Button icon="pi pi-fw pi-bars" class="p-button-rounded p-button-text p-button-text" @click="visibleLeft = true"/>
+      <h1>Constech</h1>
+    </div>
+
+  </nav>
+  <main id="content" class="mx-[6%]">
+    <slot></slot>
+  </main>
 </template>
 
 <style>
