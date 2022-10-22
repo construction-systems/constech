@@ -1,5 +1,32 @@
 {
   "projects": [
-    
+    {
+      "id": "f251cf5f-a6a9-4fac-9a3d-e525000b7e92",
+      "title": "Gas Station San Miguel",
+      "due_date": "2019-12-31",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "progress": 32
+    },
+    {
+      "id": "a81ab33f-54a5-4055-8b8c-1b5dbee1a1ab",
+      "title": "Construction Example 2",
+      "due_date": "2019-12-31",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "progress": 50
+    },
+    {
+      "id": "e9eccff9-67a8-41d1-bad0-481ab009b905",
+      "title": "Construction Example 3",
+      "due_date": "2019-12-31",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "progress": 10
+    },
+    {
+      "id": "e9eccff9-67a8-41d1-bad0-481ab009b905",
+      "title": "Construction Example 4",
+      "due_date": "2019-12-31",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "progress": 100
+    }
   ]
 }
