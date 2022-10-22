@@ -12,15 +12,16 @@ export const useProjectsStore = defineStore({
   },
   actions: {
     async fetchProjects() {
-      this.posts = []
       this.loading = true
-      try {
-        this.posts = await new ProjectsService().getAll()
-      } catch (e) {
-        this.error = e
-      } finally {
-        this.loading = false
-      }
+      await new ProjectsService().getAll()
+        .then((response) => {
+          this.projects = response.data
+          this.loading = false
+        })
+        .catch((error) => {
+          this.error = error
+          this.loading = false
+        })
     }
   }
 })

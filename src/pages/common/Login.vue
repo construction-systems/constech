@@ -23,17 +23,8 @@
   </main>
 </template>
 
-<script>
-import Card from 'primevue/card'
-import InputText from 'primevue/inputtext'
-import Button from 'primevue/button'
-
-export default {
-  name: 'Register',
-  components: {
-    Card,
-    InputText,
-    Button
-  }
-}
+<script setup>
+  import Card from 'primevue/card'
+  import InputText from 'primevue/inputtext'
+  import Button from 'primevue/button'
 </script>

@@ -21,7 +21,7 @@
     </div>
 
   </nav>
-  <main id="content" class="mx-[6%] h-[calc(100%_-_127px)]">
+  <main id="content" class="mx-[6%] h-[calc(100%_-_127px)] overflow-y-auto">
     <slot></slot>
   </main>
   <Sidebar v-model:visible="visibleLeft">
