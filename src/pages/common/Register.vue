@@ -1,5 +1,6 @@
 <template>
   <main class="w-full h-[100vh] flex justify-center items-center">
+    <img src="../../assets/logo-top-left.svg" class="fixed top-0 left-0"/>
     <Card class="w-11/12 md:w-1/3 lg:w-1/4 shadow-xl rounded-xl">
       <template #title>
         <h1 class="text-2xl font-bold text-center">{{ $t("register.title") }}</h1>
