@@ -1,5 +1,15 @@
 export default {
   en: {
+    layout: {
+      nav: {
+        search: "Search everything",
+        options: {
+          projects: "Projects",
+          messages: "Messages",
+          settings: "Settings",
+        }
+      }
+    },
     login: {
       title: "Login",
       email: {

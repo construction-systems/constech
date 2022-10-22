@@ -1,21 +1,21 @@
 <template>
   <nav class="p-5">
     <div class="flex items-center">
-      <img src="../../assets/logo.svg" @click="visibleLeft = true" class="cursor-pointer rounded-lg"/>
-      <div id="menu" class="mx-10 py-5 w-full hidden sm:flex items-center justify-around rounded-xl shadow-xl">
-        <div class="hidden md:flex w-[400px] justify-center">
-          Search everything
+      <img src="../../assets/logo.svg" class="rounded-lg hidden lg:block" />
+      <img src="../../assets/logo.svg" @click="visibleLeft = true" class="cursor-pointer rounded-lg lg:hidden" />
+      <div id="menu" class="bg-white mx-10 py-5 w-full hidden sm:flex items-center justify-around rounded-xl shadow-xl">
+        <div class="flex justify-center w-[500px]">
+          <div class="w-full bg-[#F4F7FC] p-2 rounded-full text-gray-400">
+            {{ $t('layout.nav.search')}}
+          </div>
         </div>
-        <div class="flex">
-          <router-link to="/projects">
-          <Button label="Projects" class="mx-10 p-button-text font-semibold text-gray-400"/>
-        </router-link>
-        <router-link to="/projects">
-          <Button label="Projects" class="mx-10 p-button-text font-semibold text-gray-400"/>
-        </router-link>
-        <router-link to="/projects">
-          <Button label="Projects" class="mx-10 p-button-text font-semibold text-gray-400"/>
-        </router-link>
+        <div class="hidden lg:flex">
+          <div v-for="option in options">
+            <router-link :to="option">
+              <Button :label="$t(`layout.nav.options.${option}`)"
+                class="mx-10 p-button-text font-semibold text-gray-400" />
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -30,19 +30,20 @@
 </template>
 
 <script>
-  import Sidebar from 'primevue/sidebar'
-  import Button from 'primevue/button'
+import Sidebar from 'primevue/sidebar'
+import Button from 'primevue/button'
 
-  export default {
-    data() {
-      return {
-        visibleLeft: false
-      }
-    },
-    components: {
-      Sidebar,
-      Button
+export default {
+  data() {
+    return {
+      visibleLeft: false,
+      options: ['projects', 'messages', 'settings']
     }
+  },
+  components: {
+    Sidebar,
+    Button
   }
+}
 </script>
 
