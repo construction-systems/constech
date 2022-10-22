@@ -1,54 +1,49 @@
-<script>
-  import Sidebar from 'primevue/sidebar'
-  import Button from 'primevue/button'
-
-  export default {
-    data() {
-      return {
-        visibleLeft: false
-      }
-    },
-    components: {
-      Sidebar,
-      Button
-    }
-  }
-</script>
-
 <template>
-  <nav class="flex items-center bg-[#1B4A47] h-[64px]">
-      <Button class="p-button-rounded p-button-secondary p-button-text" @click="visibleLeft = true">
-        <i class="pi pi-fw pi-bars text-white text-[25px]"></i>
-      </Button>
-      <img src="./../../assets/img/logo.png" width="40" class="mr-2"/>
-    </nav>
-  <main id="content">
-    <slot/>
+  <nav class="p-5">
+    <div class="flex items-center">
+      <img src="../../assets/logo.svg" class="rounded-lg hidden lg:block" />
+      <img src="../../assets/logo.svg" @click="visibleLeft = true" class="cursor-pointer rounded-lg lg:hidden" />
+      <div id="menu" class="bg-white mx-10 py-5 w-full hidden sm:flex items-center justify-around rounded-xl shadow-xl">
+        <div class="flex justify-center w-[500px] lg:w-[300px] xl:w-[500px] mx-5">
+          <div class="w-full bg-[#F4F7FC] p-2 rounded-full text-gray-400">
+            {{ $t('layout.nav.search')}}
+          </div>
+        </div>
+        <div class="hidden lg:flex">
+          <div v-for="(option, index) in options" v-bind:key="index">
+            <router-link :to="option">
+              <Button :label="$t(`layout.nav.options.${option}`)"
+                class="mx-10 p-button-text font-semibold text-gray-400" />
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+  <main id="content" class="mx-[6%] h-[calc(100%_-_127px)] overflow-y-auto">
+    <slot></slot>
   </main>
   <Sidebar v-model:visible="visibleLeft">
     Content
   </Sidebar>
-  <nav>
-    <div class="flex items-center">
-      <Button icon="pi pi-fw pi-bars" class="p-button-rounded p-button-text p-button-text" @click="visibleLeft = true"/>
-      <h1>Constech</h1>
-    </div>
-
-  </nav>
-  <main id="content" class="mx-[6%]">
-    <slot></slot>
-  </main>
 </template>
 
-<style>
-  #content {
-  /* Firefox */
-  height: -moz-calc(100% - 64px);
-  /* WebKit */
-  height: -webkit-calc(100% - 64px);
-  /* Opera */
-  height: -o-calc(100% - 64px);
-  /* Standard */
-  height: calc(100% - 64px);
+<script>
+import Sidebar from 'primevue/sidebar'
+import Button from 'primevue/button'
+
+export default {
+  data() {
+    return {
+      visibleLeft: false,
+      options: ['projects', 'messages', 'settings']
+    }
+  },
+  components: {
+    Sidebar,
+    Button
   }
-</style>
+}
+</script>
+

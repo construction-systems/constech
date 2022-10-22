@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.1.3",
     "pinia": "^2.0.22",
     "primeflex": "^3.2.1",
     "primeicons": "^6.0.1",
