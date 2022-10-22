@@ -1,13 +1,22 @@
 <template>
   <Layout>
-    <div>
-      asd
-    </div>
+    <section>
+      <p v-if="loading">Loading</p>
+      <div v-if="projects">
+
+      </div>
+    </section>
   </Layout>
 </template>
 
 <script>
-export default {
+import { useProjectsStore } from "../../stores/projects";
+import { storeToRefs } from "pinia";
 
+const { projects, loading, error } = storeToRefs(useProjectsStore())
+const { fetchProjects } = useProjectsStore();
+
+fetchProjects()
+export default {
 }
 </script>
