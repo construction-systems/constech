@@ -1,4 +1,14 @@
 {
+  "current_user": {
+    "id": "21d17d66-2c80-4ea4-adf7-981f8d5ac047",
+    "first_name": "Alessandro",
+    "last_name": "Chumpitaz",
+    "occupation": "Software Engineer",
+    "photo_url": "https://www.primefaces.org/primevue/demo/images/organization/walter.jpg",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+  },
+  "configs": {
+  },
   "projects": [
     {
       "id": "f251cf5f-a6a9-4fac-9a3d-e525000b7e92",

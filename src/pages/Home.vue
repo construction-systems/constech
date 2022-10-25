@@ -32,7 +32,7 @@
   import { storeToRefs } from 'pinia'
   import Card from 'primevue/card'
   import ProgressBar from 'primevue/progressbar'
-  import { useProjectsStore } from '../../stores/projects'
+  import { useProjectsStore } from '../stores/projects'
   const { projects, loading, error } = storeToRefs(useProjectsStore())
   const { fetchProjects } = useProjectsStore()
 

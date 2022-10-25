@@ -2,14 +2,14 @@ import { createApp } from "vue";
 import { createPinia } from "pinia"
 import "primeicons/primeicons.css";
 import "primevue/resources/primevue.min.css";
+import "primevue/resources/themes/lara-light-teal/theme.css";
 import "./assets/css/style.css";
-import "./assets/css/theme.css";
 
 import App from "./App.vue";
 import PrimeVue from "primevue/config";
 
-import router from "./plugins/router";
-import i18n from "./plugins/i18n";
+import router from "./config/plugins/router";
+import i18n from "./config/plugins/i18n";
 import Layout from "./components/common/Layout.vue";
 
 const pinia = createPinia()

@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia"
 import { ProjectsService } from "../services/projects.service.js";
 
 export const useProjectsStore = defineStore({

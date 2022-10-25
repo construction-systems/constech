@@ -39,5 +39,14 @@ export default {
         login: "Already have an account?",
       }
     },
+    settings: {
+      language: {
+        title: "Language"
+      }
+    },
+    locales: {
+      en: "English",
+      es: "Spanish",
+    }
   },
 };

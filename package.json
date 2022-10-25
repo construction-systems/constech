@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "concurrently \"vite\" \"json-server server/db.json -r server/routes.json -p 8080\"",
+    "start": "concurrently \"vite\" \"json-server --watch server/db.json -r server/routes.json -p 8080\"",
     "build": "vite build",
     "deploy": "",
     "preview": "vite preview"

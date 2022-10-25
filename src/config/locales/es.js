@@ -1,5 +1,15 @@
 export default {
   es: {
+    layout: {
+      nav: {
+        search: "Buscar",
+        options: {
+          projects: "Proyectos",
+          messages: "Mensajes",
+          settings: "Configuración",
+        }
+      }
+    },
     login: {
       title: "Iniciar sesión",
       email: {
@@ -29,5 +39,14 @@ export default {
         login: "¿Ya tienes una cuenta?",
       },
     },
+    settings: {
+      language: {
+        title: "Idioma"
+      }
+    },
+    locales: {
+      en: "Inglés",
+      es: "Español",
+    }
   },
 };
