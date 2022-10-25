@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: `${import.meta.env.VITE_API_HOST}/api/v1`,
+  baseURL: `https://constech-api.vercel.app/`,
   headers: { 'Content-type': 'application/json' },
 });
