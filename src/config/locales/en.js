@@ -12,8 +12,8 @@ export default {
     },
     login: {
       title: "Login",
-      email: {
-        placeholder: "Enter E-mail address",
+      username: {
+        placeholder: "Enter Username",
       },
       password: {
         placeholder: "Enter password",
@@ -25,8 +25,8 @@ export default {
     },
     register: {
       title: "Register",
-      email: {
-        placeholder: "Enter E-mail address",
+      username: {
+        placeholder: "Enter Username",
       },
       password: {
         placeholder: "Enter password",
@@ -42,7 +42,8 @@ export default {
     settings: {
       language: {
         title: "Language"
-      }
+      },
+      logout: "Logout"
     },
     locales: {
       en: "English",

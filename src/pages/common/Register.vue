@@ -29,3 +29,6 @@
   import InputText from 'primevue/inputtext'
   import Button from 'primevue/button'
 </script>
+
+<script>
+</script>

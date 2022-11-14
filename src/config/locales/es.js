@@ -13,7 +13,7 @@ export default {
     login: {
       title: "Iniciar sesión",
       email: {
-        placeholder: "Ingresar correo electrónico",
+        placeholder: "Ingresar usuario",
       },
       password: {
         placeholder: "Ingresar contraseña",
@@ -26,7 +26,7 @@ export default {
     register: {
       title: "Registrarse",
       email: {
-        placeholder: "Ingresar correo electrónico",
+        placeholder: "Ingresar usuario",
       },
       password: {
         placeholder: "Ingresar contraseña",
@@ -42,7 +42,8 @@ export default {
     settings: {
       language: {
         title: "Idioma"
-      }
+      },
+      logout: "Cerrar sesión"
     },
     locales: {
       en: "Inglés",

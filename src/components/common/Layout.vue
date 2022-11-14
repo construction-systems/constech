@@ -32,12 +32,22 @@
 <script>
 import Sidebar from 'primevue/sidebar'
 import Button from 'primevue/button'
+import {useUsersStore} from "../../stores/users.js";
 
 export default {
+  setup() {
+    const store = useUsersStore()
+    return { store }
+  },
   data() {
     return {
       visibleLeft: false,
       options: ['projects', 'messages', 'settings']
+    }
+  },
+  beforeCreate() {
+    if(this.store.currentUser == null) {
+      this.$router.push('/login')
     }
   },
   components: {
