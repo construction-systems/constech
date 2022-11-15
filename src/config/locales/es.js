@@ -12,7 +12,7 @@ export default {
     },
     login: {
       title: "Iniciar sesión",
-      email: {
+      username: {
         placeholder: "Ingresar usuario",
       },
       password: {
@@ -25,7 +25,7 @@ export default {
     },
     register: {
       title: "Registrarse",
-      email: {
+      username: {
         placeholder: "Ingresar usuario",
       },
       password: {
@@ -42,6 +42,13 @@ export default {
     settings: {
       language: {
         title: "Idioma"
+      },
+      profile: {
+        title: "Configuración de perfil",
+        change: {
+          password: "Cambiar contraseña",
+          username: "Cambiar usuario",
+        }
       },
       logout: "Cerrar sesión"
     },

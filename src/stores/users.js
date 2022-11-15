@@ -13,19 +13,6 @@ export const useUsersStore = defineStore({
     isLoggedIn: (state) => !!state.currentUser,
   },
   actions: {
-    async fetchCurrentUser() {
-      this.loading = true;
-      await new UsersService()
-        .getCurrentUser()
-        .then((response) => {
-          this.currentUser = response.data;
-          this.loading = false;
-        })
-        .catch((error) => {
-          this.error = error;
-          this.loading = false;
-        });
-    },
     async login(username, password) {
       this.loading = true;
       await new UsersService()

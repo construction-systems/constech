@@ -24,8 +24,19 @@
   <main id="content" class="mx-[6%] h-[calc(100%_-_127px)] overflow-y-auto">
     <slot></slot>
   </main>
-  <Sidebar v-model:visible="visibleLeft">
-    Content
+  <Sidebar v-model:visible="visibleLeft" class="p-0">
+    <div class="w-full">
+      <div>
+        <router-link to="/">
+          <span class="text-xl"> Home </span>
+        </router-link>
+      </div>
+      <div v-for="(option, index) in options" v-bind:key="index">
+        <router-link :to="option">
+          <span>{{ $t(`layout.nav.options.${option}`)}}</span>
+        </router-link>
+      </div>
+    </div>
   </Sidebar>
 </template>
 

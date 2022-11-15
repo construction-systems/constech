@@ -10,23 +10,37 @@
           </div>
           <span class="text-gray-400 text-sm ml-5">{{ user.occupation }}</span>
         </div>
-        <div>
-          <Card class="w-full sm:w-1/2 md:w-1/3">
-            <template #title>
-              <span class="text-gray-400 text-sm">{{ $t("settings.language.title") }}</span>
-            </template>
-            <template #content>
-              <div class="flex flex-col">
-                <div v-for="(lang, i) in langs" :key="lang" class="flex items-center p-1">
-                  <RadioButton :value="lang" v-model="$root.$i18n.locale" class="mr-2" />
-                  <label :for="lang">{{ $t(`locales.${lang}`) }}</label>
+        <div class="flex flex-wrap justify-between">
+          <div class="w-full sm:w-1/2 md:w-1/3 mb-10">
+            <Card class="w-11/12">
+              <template #title>
+                <span class="text-gray-400 text-sm">{{ $t("settings.language.title") }}</span>
+              </template>
+              <template #content>
+                <div class="flex flex-col">
+                  <div v-for="(lang, i) in langs" :key="lang" class="flex items-center p-1">
+                    <RadioButton :value="lang" v-model="$root.$i18n.locale" class="mr-2" />
+                    <label :for="lang">{{ $t(`locales.${lang}`) }}</label>
+                  </div>
                 </div>
-              </div>
-            </template>
-          </Card>
+              </template>
+            </Card>
+          </div>
+          <div class="w-full sm:w-1/2 md:w-1/3 mb-10">
+            <Card class="w-11/12">
+              <template #title>
+                <span class="text-gray-400 text-sm">{{ $t("settings.profile.title") }}</span>
+              </template>
+              <template #content>
+
+              </template>
+            </Card>
+          </div>
         </div>
         <div class="mt-5">
-          <Button :label="$t('settings.logout')" class="p-button-outlined p-button-danger" @click="handleLogout" />
+          <router-link to="/">
+            <Button :label="$t('settings.logout')" class="p-button-outlined p-button-danger" @click="handleLogout" />
+          </router-link>
         </div>
       </div>
     </section>
@@ -40,14 +54,10 @@ import Card from "primevue/card";
 import RadioButton from "primevue/radiobutton";
 import Button from "primevue/button";
 import { useUsersStore } from "../stores/users"
-const { currentUser: user, loading, error } = storeToRefs(useUsersStore())
-
-const { fetchCurrentUser, logout } = useUsersStore()
+const { currentUser: user } = storeToRefs(useUsersStore())
 const langs = ['en', 'es']
 
-fetchCurrentUser()
 const handleLogout = () => {
   logout()
-  this.$router.push("/")
 }
 </script>

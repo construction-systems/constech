@@ -43,6 +43,14 @@ export default {
       language: {
         title: "Language"
       },
+      profile: {
+        title: "Profile Settings",
+        change: {
+          password: "Change Password",
+          username: "Change Username",
+        }
+      },
+
       logout: "Logout"
     },
     locales: {
