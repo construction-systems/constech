@@ -36,6 +36,7 @@ export default {
     InputText,
     Button
   },
+
   setup() {
     const userStore = useUsersStore();
     return { userStore }

@@ -18,7 +18,7 @@
               </template>
               <template #content>
                 <div class="flex flex-col">
-                  <div v-for="(lang, i) in langs" :key="lang" class="flex items-center p-1">
+                  <div v-for="(lang, i) in locales" :key="lang" class="flex items-center p-1">
                     <RadioButton :value="lang" v-model="$root.$i18n.locale" class="mr-2" />
                     <label :for="lang">{{ $t(`locales.${lang}`) }}</label>
                   </div>
@@ -39,7 +39,7 @@
         </div>
         <div class="mt-5">
           <router-link to="/">
-            <Button :label="$t('settings.logout')" class="p-button-outlined p-button-danger" @click="handleLogout" />
+            <Button :label="$t('settings.logout')" class="p-button-outlined p-button-danger" @click="logout()" />
           </router-link>
         </div>
       </div>
@@ -47,17 +47,31 @@
   </Layout>
 </template>
 
-<script setup>
-import { storeToRefs } from "pinia";
+<script>
 import Avatar from "primevue/avatar";
 import Card from "primevue/card";
 import RadioButton from "primevue/radiobutton";
 import Button from "primevue/button";
 import { useUsersStore } from "../stores/users"
-const { currentUser: user } = storeToRefs(useUsersStore())
-const langs = ['en', 'es']
-
-const handleLogout = () => {
-  logout()
+export default {
+  components: {
+    Avatar,
+    Card,
+    RadioButton,
+    Button
+  },
+  data() {
+    return {
+      locales: ["en", "es"],
+      user: null
+    }
+  },
+  setup() {
+    const userStore = useUsersStore()
+    return { currentUser: userStore.getCurrentUser, logout: userStore.logout  }
+  },
+  beforeMount() {
+    this.user = this.currentUser;
+  }
 }
 </script>

@@ -1,7 +1,8 @@
-import { defineStore } from "pinia";
-import { UsersService } from "../services/users.service.js";
-import { useCookies } from "vue3-cookies";
-const { cookies } = useCookies();
+import {defineStore} from "pinia";
+import {UsersService} from "../services/users.service.js";
+import {useCookies} from "vue3-cookies";
+
+const {cookies} = useCookies();
 export const useUsersStore = defineStore({
   id: "users",
   state: () => ({
@@ -10,8 +11,11 @@ export const useUsersStore = defineStore({
     error: null,
   }),
   getters: {
-    isLoggedIn: (state) => !!state.currentUser,
-  },
+    getCurrentUser(state) {
+      return state.currentUser;
+    }
+  }
+  ,
   actions: {
     async login(username, password) {
       this.loading = true;
