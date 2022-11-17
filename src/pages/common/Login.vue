@@ -1,7 +1,7 @@
 <template>
   <main class="w-full h-[100vh] flex justify-center items-center">
     <img src="../../assets/logo-top-left.svg" class="fixed top-0 left-0 hidden md:block" />
-    <Card class="w-11/12 md:w-1/2 lg:w-1/4 shadow-xl rounded-xl p-5">
+    <Card class="w-11/12 md:w-1/2 lg:w-1/3 xl:w-1/4 shadow-xl rounded-xl p-5">
       <template #title>
         <h1 class="text-2xl font-bold text-center">{{ $t("login.title") }}</h1>
       </template>
@@ -30,13 +30,13 @@ import Card from 'primevue/card'
 import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 import { useUsersStore } from "../../stores/users.js";
+
 export default {
   components: {
     Card,
     InputText,
     Button
   },
-
   setup() {
     const userStore = useUsersStore();
     return { userStore }
@@ -46,7 +46,7 @@ export default {
       this.$router.push('/')
     }
   },
-  data: () => {
+  data() {
     return {
       username: '',
       password: ''
