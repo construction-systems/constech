@@ -25,6 +25,12 @@ export default {
     },
     register: {
       title: "Register",
+      firstname: {
+        placeholder: "First Name",
+      },
+      lastname: {
+        placeholder: "Last Name",
+      },
       username: {
         placeholder: "Username",
       },
@@ -33,12 +39,6 @@ export default {
         confirmation: {
           placeholder: "Password Confirmation",
         }
-      },
-      firstname: {
-        placeholder: "First Name",
-      },
-      lastname: {
-        placeholder: "Last Name",
       },
       actions: {
         register: "Register",

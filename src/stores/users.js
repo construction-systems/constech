@@ -24,17 +24,27 @@ export const useUsersStore = defineStore({
           this.currentUser = response.data;
           cookies.set("currentUser", JSON.stringify(response.data));
         })
-        .catch((error) => {
-          this.error = error;
+        .catch((e) => {
+          this.error = e;
+        })
+        .finally(() => {
           this.loading = false;
         });
     },
     async register(payload) {
+      this.loading = true;
       await new UsersService()
         .register(payload)
-        .then((response) => {
-          console.log(response.data);
+        .then((res) => {
+          this.currentUser = res.data;
+          cookies.set("currentUser", JSON.stringify(res.data));
         })
+        .catch((e) => {
+          this.error = e;
+        })
+        .finally(() => {
+          this.loading = false;
+        });
     },
     logout() {
       this.currentUser = null;
