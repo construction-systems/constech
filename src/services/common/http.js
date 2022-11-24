@@ -3,7 +3,7 @@ import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies()
 
 const opts = {
-  baseURL: `${import.meta.env.VITE_API_HOST}/api/v1`,
+  baseURL: "https://constech-api.azurewebsites.net/api/v1",
   headers: {
     "Content-Type": "application/json",
   }

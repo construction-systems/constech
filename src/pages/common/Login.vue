@@ -55,10 +55,11 @@ export default {
   methods: {
     async handleSubmit() {
       await this.userStore.login(this.username, this.password)
-        .then(r => {
-          setTimeout(() => {
-            this.$router.push('/')
-          }, 2000)
+        .then(() => {
+          if (this.userStore.error === null)
+            setTimeout(() => {
+              this.$router.push('/')
+            }, 1000)
         })
     },
   },

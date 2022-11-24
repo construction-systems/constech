@@ -45,6 +45,11 @@ export default {
         login: "Already have an account?",
       }
     },
+    projects: {
+      card: {
+        progress: "Progreso del Proyecto"
+      }
+    },
     settings: {
       language: {
         title: "Language"

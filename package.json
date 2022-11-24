@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "",
+    "deploy": "rm -rf dist/ && vite build && firebase deploy",
     "preview": "vite preview"
   },
   "dependencies": {

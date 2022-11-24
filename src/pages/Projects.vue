@@ -3,6 +3,19 @@
     <section>
       <p v-if="loading">Loading</p>
       <p v-if="error">{{ error.message }}</p>
+      <div class="mb-10 sticky top-0 z-10">
+        <Card v-if="company">
+          <template #title>
+            Company: {{ company.name }}
+          </template>
+          <template #subtitle>
+            Lima, Peru
+          </template>
+          <template #content class="text-ellipsis"> 
+            {{ company.description }}
+          </template>
+        </Card>
+      </div>
       <div
         class="pt-10 md:pt-0 grid grid-cols-1 lg:grid-cols-2 gap-x-16 xl:gap-x-48 gap-y-32 justify-items-center lg:p-24 ">
         <Card v-if="projects || projects.length > 1" v-for="(project, index) in projects" :key="index"
@@ -35,7 +48,7 @@
 <script>
 import Card from 'primevue/card'
 import ProgressBar from 'primevue/progressbar'
-import { useProjectsStore } from '../stores/projects'
+import { useCompaniesStore } from '../stores/companies'
 
 export default {
   components: {
@@ -44,17 +57,19 @@ export default {
   },
   data() {
     return {
+      company: null,
       projects: [],
       loading: false,
       error: null
     }
   },
   async beforeMount() {
-    await this.store.fetchProjects()
-    this.projects = this.store.projects
+    await this.store.fetchCompany()
+    this.company = this.store.company
+    this.projects = this.store.company.projects
   },
   setup() {
-    const store = useProjectsStore()
+    const store = useCompaniesStore()
     return { store }
   }
 
