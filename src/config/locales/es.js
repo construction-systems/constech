@@ -12,6 +12,12 @@ export default {
     },
     login: {
       title: "Iniciar sesión",
+      firstname: {
+        placeholder: "Nombre",
+      },
+      lastname: {
+        placeholder: "Apellido",
+      },
       username: {
         placeholder: "Ingresar usuario",
       },
@@ -26,10 +32,10 @@ export default {
     register: {
       title: "Registrarse",
       username: {
-        placeholder: "Ingresar usuario",
+        placeholder: "Usuario",
       },
       password: {
-        placeholder: "Ingresar contraseña",
+        placeholder: "Contraseña",
         confirmation: {
           placeholder: "Confirmar contraseña",
         },

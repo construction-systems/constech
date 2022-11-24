@@ -4,6 +4,7 @@ import "primeicons/primeicons.css";
 import "primevue/resources/primevue.min.css";
 import "primevue/resources/themes/lara-light-teal/theme.css";
 import "./assets/css/style.css";
+import ToastService from "primevue/toastservice";
 
 import App from "./App.vue";
 import PrimeVue from "primevue/config";
@@ -19,6 +20,7 @@ app.use(PrimeVue);
 app.use(router);
 app.use(i18n);
 app.use(pinia);
+app.use(ToastService);
 
 app.mount("#app");
 app.component('Layout', Layout);

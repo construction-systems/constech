@@ -13,10 +13,10 @@ export default {
     login: {
       title: "Login",
       username: {
-        placeholder: "Enter Username",
+        placeholder: "Username",
       },
       password: {
-        placeholder: "Enter password",
+        placeholder: "Password",
       },
       actions: {
         login: "Login",
@@ -25,13 +25,19 @@ export default {
     },
     register: {
       title: "Register",
+      firstname: {
+        placeholder: "First Name",
+      },
+      lastname: {
+        placeholder: "Last Name",
+      },
       username: {
-        placeholder: "Enter Username",
+        placeholder: "Username",
       },
       password: {
-        placeholder: "Enter password",
+        placeholder: "Password",
         confirmation: {
-          placeholder: "Confirm password",
+          placeholder: "Password Confirmation",
         }
       },
       actions: {
