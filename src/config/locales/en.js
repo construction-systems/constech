@@ -4,7 +4,7 @@ export default {
       nav: {
         search: "Search everything",
         options: {
-          projects: "Projects",
+          projects: "My Projects",
           messages: "Messages",
           settings: "Settings",
         }

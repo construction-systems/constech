@@ -6,7 +6,7 @@
       <div
         class="pt-10 md:pt-0 grid grid-cols-1 lg:grid-cols-2 gap-x-16 xl:gap-x-48 gap-y-32 justify-items-center lg:p-24 ">
         <Card v-if="projects || projects.length > 1" v-for="(project, index) in projects" :key="index"
-          class="w-full md:w-4/5 lg:w-full shadow-xl p-5 h-[400px] rounded-xl">
+          class="w-full md:w-4/5 lg:w-full shadow-xl p-5 h-[450px] rounded-xl">
           <template #title>
             {{ project.title }}
           </template>
@@ -14,7 +14,7 @@
             {{ project.due_date }}
           </template>
           <template #content class="a">
-            <p class="text-gray-400 h-[110px]">{{ project.description }}</p>
+            <p class="text-gray-400 h-[200px]">{{ project.description }}</p>
           </template>
           <template #footer>
             <div class="flex justify-between mb-2">
@@ -42,13 +42,20 @@ export default {
     Card,
     ProgressBar
   },
-  setup () {
-    const { projects, loading, error } = useProjectsStore()
+  data() {
     return {
-      projects,
-      loading,
-      error
+      projects: [],
+      loading: false,
+      error: null
     }
+  },
+  async beforeMount () {
+    await this.store.fetchProjects()
+    this.projects = this.store.projects
+  },
+  setup() {
+    const store = useProjectsStore()
+    return { store }
   }
 
 }
