@@ -36,20 +36,6 @@
   </main>
 </template>
 
-<<<<<<< HEAD
-<script>
-  import Card from 'primevue/card'
-  import InputText from 'primevue/inputtext'
-  import Button from 'primevue/button'
-export default {
-  components: {
-    Card,
-    InputText,
-    Button
-  },
-}
-</script>
-=======
 
 <script>
 import Card from 'primevue/card'
@@ -118,4 +104,3 @@ export default {
   }
 }
 </script>
->>>>>>> 73b684fe8fde11976add357a9ac7bcf36785fef2
